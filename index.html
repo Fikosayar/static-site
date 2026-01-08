@@ -45,18 +45,19 @@
       };
 
       (function(d,t) {
-        var BASE_URL = "https://chat.sapanca360.com";
-        var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        g.src = BASE_URL + "/packs/js/sdk.js";
+        var BASE_URL="https://chat.sapanca360.com";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        // Sonuna rastgele bir parametre ekleyerek önbelleği (cache) temizliyoruz
+        g.src=BASE_URL+"/packs/js/sdk.js?v=" + Math.random();
         g.async = true;
-        s.parentNode.insertBefore(g, s);
-        g.onload = function() {
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
           window.chatwootSDK.run({
             websiteToken: 'QqNz984C4K4sCJMXmYyUehk8',
             baseUrl: BASE_URL
-          });
+          })
         }
-      })(document, "script");
+      })(document,"script");
     </script>
 
 </body>
